@@ -15,10 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/emeraldman7/Stranger-Things-but-its-social-media/issues"
-  },
-  "homepage": "https://github.com/emeraldman7/Stranger-Things-but-its-social-media#readme",
+  
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -1,8 +1,18 @@
 import React from 'react';
-
+import { Register } from './';
 
 function App () {
-    return <h1>APP</h1>
+    return(
+
+        <div>
+        
+            <Register />
+
+        </div>
+
+    )
 }
+ 
+console.log( App )
 
 export default App;
