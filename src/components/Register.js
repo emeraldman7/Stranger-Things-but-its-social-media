@@ -1,25 +1,40 @@
 import React, { useState } from 'react';
+import { registerUser } from '../AJAX requests';
 
-function Register(){
+
+
+function Register({ setToken }){
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    console.log(username, password)
+    
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        const user= {username, password}
+
+
+        const results = await registerUser(user)
+            if (results.success) {
+                setToken(results.data.token)
+            }
+    }
+
 
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <input
             type="text"
             placeholder="enter username"
-            onChange={(eventUser) => setUsername(eventUser.target.value)}
+            onChange={(user) => setUsername(user.target.value)}
             />
             <input
             type="password"
             placeholder="enter password"
-            onChange={(eventPass) => setPassword(eventPass.target.value)}
+            onChange={(pass) => setPassword(pass.target.value)}
             />
-        <button type="Log in">Log in</button>
+        <button type="accountCreate">Create Account</button>
         </form>
     )
 }
