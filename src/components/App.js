@@ -4,7 +4,11 @@ import { Register } from './';
 function App () {
     const [token, setToken] = useState('');
 
-    console.log(token)
+    if (window.localStorage.getItem("token")){
+        setToken(window.localStorage.getItem("token"));
+    }
+
+    
 
     return(
 
