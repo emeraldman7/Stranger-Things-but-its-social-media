@@ -1,26 +1,22 @@
-import React, { useState } from 'react';
-import { Register } from './';
+import React, { useEffect, useState } from "react";
+import { Register } from "./";
 
-function App () {
-    const [token, setToken] = useState('');
+function App() {
+  const [token, setToken] = useState("");
 
-    if (window.localStorage.getItem("token")){
+  useEffect(() => {
+    if (window.localStorage.getItem("token")) {
         setToken(window.localStorage.getItem("token"));
-    }
+      }
+  }, [])
 
-    
-
-    return(
-
-        <div>
-        
-            <Register setToken={setToken} />
-
-        </div>
-
-    )
+  return (
+    <div>
+      <Register setToken={setToken} />
+    </div>
+  );
 }
- 
-console.log( App )
+
+
 
 export default App;
